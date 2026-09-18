@@ -32,7 +32,7 @@ body {
 
 .recolhe-mais img {
     height: auto;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .formulario-cadastro label {

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamado - Nossa Cidade</title>
+  <link rel="stylesheet" href="/css s/denuncia_style.css">
+</head>
+<body>
+  <div class="desktop-shell">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="/imagens/imag.png" alt="logo png do recolhe mais">
+        <div>
+          <strong>RecolheMais</strong>
+          <span>Gestão de chamados</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item"><span>⌂</span> Início</a>
+        <a href="#" class="menu-item active"><span>＋</span> Novo chamado</a>
+        <a href="#" class="menu-item"><span>◷</span> Meus chamados</a>
+        <a href="#" class="menu-item"><span>⌖</span> Mapa</a>
+        <a href="#" class="menu-item"><span>♙</span> Meu perfil</a>
+      </nav>
+
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb"> Novo chamado</p>
+          <h1>Olá, 👋</h1>
+        </div>
+
+      </header>
+
+      <section class="page">
+        <div class="page-heading">
+          <div>
+            <h2>Reportar problema</h2>
+            <p>Abra um chamado para informar um problema na sua região.</p>
+          
+
+        <div class="layout-grid">
+
+          <section class="card form-card">
+            <div class="card-title">
+              <div>
+                <h3>Novo chamado</h3>
+                <p>Preencha os dados abaixo.</p>
+              </div>
+            </div>
+
+            <form id="ticketForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="tipo">Tipo de problema *</label>
+                  <select id="tipo" required>
+                    <option value="" selected disabled>Selecione uma opção</option>
+                    <option>Coleta não realizada</option>
+                    <option>Lixo acumulado</option>
+                    <option>Descarte irregular</option>
+                    <option>Entulho em via pública</option>
+                    <option>Outro problema</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="bairro">Bairro *</label>
+                  <input id="bairro" type="text" placeholder="Digite o bairro" required>
+                </div>
+
+                <div class="field field-full">
+                  <label for="local">Local do problema *</label>
+                  <div class="location-input">
+                    <span>⌖</span>
+                    <input id="local" type="text" placeholder="Rua, número ou ponto de referência" required>
+                  </div>
+                </div>
+
+                <div class="field field-full">
+                  <label for="descricao">Descrição do problema *</label>
+                  <textarea id="descricao" rows="6"
+                    placeholder="Explique o que aconteceu, indicando detalhes que possam ajudar a equipe..."
+                    required></textarea>
+                </div>
+
+                <div class="field field-full">
+                  <label>Foto <small>(opcional)</small></label>
+                  <label class="upload" for="foto">
+                    <span class="upload-icon">↑</span>
+                    <span>
+                      <strong id="fileName">Adicionar foto</strong>
+                      <small>JPG, PNG ou WEBP — tamanho máximo recomendado: 5 MB</small>
+                    </span>
+                    <span class="upload-action">Escolher arquivo</span>
+                  </label>
+                  <input class="hidden-file" id="foto" type="file" accept="image/*">
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="cancel" type="button">Cancelar</button>
+                <button class="submit" type="submit">Enviar chamado →</button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="side-column">
+            <section class="card status-card">
+              <div class="status-head">
+                <div>
+                  <p>Status da coleta</p>
+                  <strong>Regular</strong>
+                </div>
+                <div class="check">✓</div>
+              </div>
+              <p class="last-collection">Última coleta: Ontem, 18:17</p>
+            </section>
+
+            <section class="card help-card">
+              <h3>Como funciona?</h3>
+              <div class="step"><b>1</b><span>Informe o tipo e o local do problema.</span></div>
+              <div class="step"><b>2</b><span>Adicione uma descrição e, se possível, uma foto.</span></div>
+              <div class="step"><b>3</b><span>Envie o chamado e acompanhe o andamento.</span></div>
+            </section>
+
+            <section class="card reports-card">
+              <h3>Seus chamados</h3>
+              <div class="report-numbers">
+                <div><strong>3</strong><span>Em análise</span></div>
+                <div><strong>4</strong><span>Andamento</span></div>
+                <div><strong>7</strong><span>Resolvidos</span></div>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Chamado enviado com sucesso!</div>
+
+  <script>
+    
+
+    document.getElementById("foto").addEventListener("change", function () {
+      document.getElementById("fileName").textContent =
+        this.files.length ? this.files[0].name : "Adicionar foto";
+    });
+
+    document.getElementById("ticketForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3000);
+    });
+  </script>
+</body>
+</html>

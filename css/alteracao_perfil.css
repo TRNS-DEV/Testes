@@ -1,0 +1,209 @@
+/* CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FUNDO: Branco */
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* BOTÃO DE VOLTAR: Canto Superior Esquerdo */
+.btn-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #15803d; 
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+    color: #166534; 
+}
+
+/* BLOCO CENTRAL: Harmonia em Branco e Verde */
+.profile-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0; 
+    box-shadow: 0 10px 30px rgba(21, 128, 61, 0.05);
+}
+
+/* CABEÇALHO DO PERFIL */
+.profile-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #f0fdf4; 
+    border: 3px solid #15803d;  
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    color: #15803d;
+}
+
+.btn-change-avatar {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 32px;
+    height: 32px;
+    background-color: #15803d; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid #ffffff; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-change-avatar:hover {
+    background-color: #166534; 
+    transform: scale(1.05);
+}
+
+#fileInput {
+    display: none;
+}
+
+/* LETRAS: Pretas */
+h2 {
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* FORMULÁRIO EM MALHA (GRID) PARA ORGANIZAÇÃO */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.full-width {
+    grid-column: span 2; /* Garante que campos como Nome e Ponto de Referência usem a linha inteira */
+}
+
+/* CAMPOS DE ENTRADA (INPUTS) */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #000000;
+    outline: none;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #15803d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12);
+}
+
+/* SEÇÃO DE BOTÕES INFERIORES */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-save {
+    padding: 12px 28px;
+    background-color: #15803d;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
+}
+
+.btn-save:hover {
+    background-color: #166534;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+    .btn-save {
+        width: 100%;
+    }
+    body {
+        padding-top: 80px;
+    }
+}

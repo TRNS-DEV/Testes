@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente Principal Verde -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80C342"/>
+      <stop offset="40%" stop-color="#00A651"/>
+      <stop offset="100%" stop-color="#004D25"/>
+    </linearGradient>
+    
+    <!-- Gradiente de Sombra/Curva -->
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#004D25"/>
+      <stop offset="100%" stop-color="#002914"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tampa da Lixeira -->
+  <rect x="216" y="24" width="80" height="24" rx="12" fill="url(#greenGrad)" />
+  <path d="M140 64 H372 A 20 20 0 0 1 392 84 V 96 H120 V 84 A 20 20 0 0 1 140 64 Z" fill="url(#greenGrad)" />
+
+  <!-- Corpo Principal (Símbolo R + Lixeira) -->
+  <path d="
+    M 120 120 
+    H 320 
+    C 380 120, 420 160, 420 220 
+    C 420 270, 390 305, 340 315 
+    L 395 400 
+    A 15 15 0 0 1 390 420 
+    H 330 
+    L 275 330 
+    H 180 
+    V 370 
+    C 180 410, 210 420, 250 420 
+    H 300
+    V 470
+    H 250
+    C 160 470, 120 420, 120 340 
+    Z" 
+    fill="url(#greenGrad)" />
+
+  <!-- Recorte Interno da Letra R -->
+  <path d="
+    M 180 170 
+    H 310 
+    C 340 170, 360 190, 360 220 
+    C 360 250, 340 270, 310 270 
+    H 180 
+    Z" 
+    fill="#FFFFFF" />
+
+  <!-- Detalhe da Curva Interna em Tom Escuro -->
+  <path d="
+    M 120 120 
+    V 340 
+    C 120 380, 140 420, 180 440
+    V 170
+    H 180
+    Z" 
+    fill="url(#darkGrad)" opacity="0.35" />
+
+  <!-- Rodinha Inferior Direita -->
+  <circle cx="390" cy="400" r="50" fill="url(#greenGrad)" />
+  <circle cx="390" cy="400" r="24" fill="#FFFFFF" />
+</svg>

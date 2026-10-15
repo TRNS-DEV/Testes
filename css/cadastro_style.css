@@ -19,16 +19,24 @@ body{
      color: var(--cinza-texto);
 }
 .recolhe-mais img {
-    max-width: 100%;
-    height: auto;
+    max-width: 60%;
+    height:auto;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+   
+   
 }
 .container-principal{
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     background-color: #ffffff;
-    padding: 32px;
+    padding: 20px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+
+    
 }
 .formulario-cadastro label{
     display: block;

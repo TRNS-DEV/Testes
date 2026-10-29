@@ -12,14 +12,16 @@
   <div class="container-principal">
     <!-- Logo do Recolhe Mais com link para retornar à tela de login -->
     <div class="recolhe-mais">
-      <a href="chamados.html"><img src="../imagens/logo_melhorada.png" alt="logo recolhe mais"></a>
+        <a href="chamados.html">
+      <img src="../imagens/logo_melhorada.png" alt="logo recolhe mais">
+        </a>
     </div>
     <div class="botoes">
         <!-- Permite alternar entre os formulários de cadastro de Morador e Empresa -->
         <button type="button" class="btn-morador">Morador</button>
         <button type="button" class="btn-empresa">Empresa</button>
     </div>
-    <form method="post" class="formulario-cadastro"> 
+    <form id="formCadastro" method="post" class="formulario-cadastro"> 
         <!-- Campos utilizados para o cadastro de um usuário do tipo Morador -->
         <fieldset class="campos-morador">
             <legend hidden>Dados do Morador</legend>
@@ -27,6 +29,8 @@
         <input type="text" id="nome" name="nome" required> 
         <label for="email">Email:</label> 
         <input type="email" id="email" name="email" required> 
+        <label for="contato"> Telefone / Whatsapp</label>
+        <input type="tel" name="contato" id="contato">
         <!-- Validação básica do CEP utilizando expressão regular (pattern) -->
         <label for="cep">CEP:</label>
     <input
@@ -54,14 +58,20 @@
             <input type="text" id="razao-social" name="razaoSocial">
             <label for="cnpj">CNPJ:</label>
             <input type="text" id="cnpj" name="cnpj" maxlength="18" inputmode="numeric" pattern="\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}" placeholder="00.000.000/0000-00" title="Digite no formato 00.000.000/0000-00">
+            <label for="gestor">Nome do Gestor</label>
+            <input type="text" id="gestor" name="gestor">
+            <label for="Telefone-coorporativo">Telefone / WhatsApp Corporativo:</label>
+            <input type="tel" id="Telefone-coorporativo" name="Telefone / WhatsApp Corporativo">
             <label for="email-empresa">E-mail corporativo:</label>
             <input type="email" id="email-empresa" name="emailEmpresa">
+            <label for="sede">Endereço da Sede</label>
+            <input type="text" id="sede" name="sede">
             <label for="areas-atendidas">Áreas atendidas:</label>
             <input type="text" id="areas-atendidas" name="areasAtendidas">
             <label for="senha-empresa">Senha:</label>
             <input type="password" id="senha-empresa" name="senhaEmpresa">
         </fieldset>
-        <button type="submit">Cadastrar</button>
+       <a href="chamados.html"><button type="submit">Cadastrar</button></a>
     </form>
     </div>
     <script src="../cadastro.js"></script>

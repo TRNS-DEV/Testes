@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const botaoEmpresa = document.querySelector(".btn-empresa");
 const camposMorador = document.querySelector(".campos-morador");
 const camposEmpresa = document.querySelector(".campos-empresa");
@@ -17,3 +38,4 @@ botaoMorador.addEventListener("click",function(){
     botaoMorador.classList.add("ativo")
     botaoEmpresa.classList.remove("ativo")
 });
+

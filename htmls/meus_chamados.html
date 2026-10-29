@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamado - Nossa Cidade</title>
+  <link rel="stylesheet" href="../css/denuncia_style.css">
+  <link rel="icon" href="../imagens/favicon-svg.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="desktop-shell">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="/imagens/imag.png" alt="logo png do recolhe mais">
+        <div>
+          <strong>RecolheMais</strong>
+          <span>Gestão de chamados</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item"><span>⌂</span> Início</a>
+        <a href="chamados.html" class="menu-item "><span>＋</span> Novo chamado</a>
+        <a href="meus_chamados.html" class="menu-item active"><span>◷</span> Meus chamados</a>
+        <a href="#" class="menu-item"><span>⌖</span> Mapa</a>
+        <a href="perfil.html" class="menu-item"><span>♙</span> Meu perfil</a>
+      </nav>
+
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Meus Chamados</p>
+          <h1>Olá, 👋</h1>
+        </div>
+
+      </header>
+
+      <section class="page">
+        <div class="page-heading">
+          <div>
+            <h2>Meus Chamados</h2>
+            <p>Acompanhe os problemas que você reportou.</p>
+          </div>
+        </div>
+
+        <div class="layout-grid">
+
+          <section class="card form-card">
+            <div class="card-title">
+              <div>
+                <h3>Confira as suas denúncias</h3>
+                <p>Verifique as denúncias abaixo.</p>
+              </div>
+            </div>
+            <select id="ordenar">
+              <option value="Recentes">Recentes</option>
+              <option value="Tipo de material">Tipo de material</option>
+              <option value="Antigas">Antigas</option>
+            </select>
+            <div id="listaChamados"></div>
+          </section>
+
+          <aside class="side-column">
+            <section class="card" id="detalhes">
+              <h3>Detalhes do Chamado</h3>
+              <p>Selecione um chamado para ver os detalhes</p>
+              <p>Protocolo:</p>
+             <strong id="detProtocolo">-</strong>
+             <p>Tipo:</p>
+             <strong id="detTipo">-</strong>
+             <p>Local:</p>
+             <strong id="detLocal">-</strong>
+             <p>Status:</p>
+             <strong id="detStatus">-</strong>
+             <p>Descrição:</p>
+             <strong id="detDescricao">-</strong>
+             <img id="detFoto" src="" alt="Foto do chamado">
+            </section>
+            <section class="card reports-card">
+              <h3>Seus chamados</h3>
+              <div class="report-numbers">
+                <div><strong>3</strong><span>Em análise</span></div>
+                <div><strong>4</strong><span>Andamento</span></div>
+                <div><strong>7</strong><span>Resolvidos</span></div>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+const chamados = [
+
+  {
+    protocolo: "2026-0001",
+    tipo: "Lixo acumulado",
+    local: "Rua das Flores, 120",
+    data: "2026-10-20",
+    status: "Em análise",
+    descricao: "Lixo acumulado há três dias na calçada.",
+    foto: "https://picsum.photos/id/10/400/300"
+  },
+  {
+    protocolo: "2026-0002",
+    tipo: "Lixo acumulado",
+    local: "Rua das margaridas, 110",
+    data: "2026-08-20",
+    status: "Em análise",
+    descricao: "Lixo acumulado há três dias na calçada.",
+    foto: "https://picsum.photos/id/20/400/300"
+  },
+  {
+    protocolo: "2026-0003",
+    tipo: "Lixo acumulado",
+    local: "Rua das Flores, 120",
+    data: "2026-07-20",
+    status: "Equipe a caminho",
+    descricao: "Lixo acumulado há três dias na calçada.",
+    foto: "https://picsum.photos/id/30/400/300"
+  },
+  {
+    protocolo: "2026-0004",
+    tipo: "Lixo acumulado",
+    local: "Rua das Flores, 120",
+    data: "2026-06-20",
+    status: "Concluído",
+    descricao: "Lixo acumulado há três dias na calçada.",
+    foto: "https://picsum.photos/id/40/400/300"
+  },
+];
+function mostrarChamados(){
+  const lista = document.getElementById("listaChamados");
+  lista.innerHTML = "";
+ chamados.forEach(function (chamado) {
+  const card=document.createElement("div");
+  card.className= "card item-chamado";
+  card.innerHTML=
+  `<strong>${chamado.protocolo}</strong>
+  <p>${chamado.tipo}</p>
+  <p>${chamado.local}</p>
+  <p>${chamado.status}</p>
+  <p>${chamado.data}</p>
+  `;
+ 
+  card.addEventListener("click", function(){
+   preencher("detTipo", chamado.tipo);
+   preencher("detProtocolo",chamado.protocolo);
+   preencher("detLocal",chamado.local);
+   preencher("detStatus",chamado.status);
+   preencher("detDescricao",chamado.descricao);
+  document.getElementById("detFoto").src=chamado.foto;
+  });
+  lista.appendChild(card);
+ });
+}
+mostrarChamados();
+function preencher(id,texto){
+  document.getElementById(id).textContent=texto
+
+ }
+  </script>
+</body>
+</html>

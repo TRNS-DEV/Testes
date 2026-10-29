@@ -1,0 +1,238 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: rgb(224, 223, 219);
+}
+
+.interface{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo do header */
+
+header.rolagem{
+    background-color: white;
+    padding: 10px 0px;
+}
+
+header.rolagem .menu-desktop ul li a, header.rolagem section.btn-contato{
+    color: rgb(29, 107, 57)
+}
+
+header{ width: 100%;
+    padding: 20px 0;
+    background-color: rgb(29, 107, 57);
+}
+
+header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .interface img{
+    max-width:60px;
+}
+
+header .menu-desktop ul{
+    list-style-type: none;
+}
+
+header .menu-desktop ul li{
+    display: inline-block;
+    margin: 0px 35px;
+}
+
+header .menu-desktop ul li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+header .menu-desktop ul li a:hover{
+    transform: scale(1.1);
+}
+
+header .btn-contato button{
+    width: 160px;
+    height: 50px;
+    background-color: transparent;
+    font-size: 18px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .btn-contato button:hover{
+    background-color: white;
+    color: rgb(29, 107, 57);
+}
+
+/*Estilo do hero-site */
+
+section.hero-site{
+    height: 90vh;
+    background-image: url(../imgs/gari_sede_garagem.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-color: rgb(29, 107, 57);
+
+}
+
+.hero-site .interface{
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.hero-site .txt-hero h1{
+    font-size: 4em;
+    line-height: 70px;
+    font-weight: 200;
+}
+
+.hero-site .txt-hero h1 span{
+    display: block;
+    font-weight: 800;
+
+}
+
+.hero-site .txt-hero p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.hero-site .txt-hero p span{
+    display: block;
+    font-weight: 500;
+    margin: 5px 0px;
+}
+
+.hero-site .txt-hero button{
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    font-size: 18px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 25px 0px;
+}
+
+.hero-site .txt-hero button:hover{
+    background-color: white;
+    color: rgb(29, 107, 57);
+}
+
+/* Estilo das vantagens */
+
+section.vantagens {
+    padding: 80px 0;
+    background-color: rgb(224, 223, 219);
+}
+
+.vantagens .itens-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    margin-bottom: 60px;
+
+}
+
+.vantagens .itens-conteiner .img-itens img{
+    max-width: 420px;
+}
+
+.vantagens .itens-conteiner .txt-itens h3{
+    font-size: 3em;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+
+.itens-conteiner .txt-itens h3 span{
+    font-weight: 300;
+}
+
+body section.vantagens div.interface article{
+    background-color: rgb(224, 223, 219);
+}
+
+/* Estilo botoes contato */
+
+section.contato_redes_social{
+    background-color: white;
+    padding: 80px 0;
+}
+
+.txt-ctt-rede_social, .icons-contato{
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    vertical-align: middle;
+}
+.txt-ctt-rede_social h3 span{
+display: flex;
+
+}
+.txt-ctt-rede_social p{
+    margin-top: 15px;
+}
+
+.contato_redes_social .txt-ctt-rede_social h3{
+    font-size: 3em;
+    line-height: 25px;
+   
+    
+}
+
+.contato_redes_social .txt-ctt-rede_social h3 span{
+    font-weight: 300;
+   
+}
+
+.contato_redes_social .icons-contato a{
+    text-decoration: none;
+}
+
+
+
+.contato_redes_social .icons-contato button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    width: 60%;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background-color: transparent;
+    border: 2px solid rgb(29, 107, 57);
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.contato_redes_social .icons-contato button i{
+    font-size: 20px;
+    
+}
+
+.contato_redes_social .icons-contato button:hover{
+    background-color: rgb(29, 107, 57);
+}
+
+ .contato_redes_social .icons-contato button:hover i, .contato_redes_social .icons-contato button:hover{
+        color: #fff;
+    }

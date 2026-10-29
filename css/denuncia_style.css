@@ -69,6 +69,7 @@ button {
   color: var(--green);
   font-size: 25px;
   font-weight: bold;
+  
 }
 
 .brand strong {
@@ -485,6 +486,22 @@ textarea {
   color: #555;
   font-size: 9px;
 }
+#listaChamados{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item-chamado{
+  cursor: pointer;
+  border-color: var(--green-2);
+  box-shadow: #216b17;
+}
+#detFoto{
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
 
 /* NOTIFICAÇÃO */
 
@@ -619,4 +636,7 @@ textarea {
   .cancel, .submit {
     width: 100%;
   }
+
+
+
 }

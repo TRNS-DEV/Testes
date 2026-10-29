@@ -12,7 +12,7 @@
 
     <aside class="sidebar">
       <div class="brand">
-        <img src="../imagens/imag.png" alt="logo png do recolhe mais">
+        <img src="/imagens/imag.png" alt="logo png do recolhe mais">
         <div>
           <strong>RecolheMais</strong>
           <span>Gestão de chamados</span>
@@ -22,9 +22,9 @@
       <nav class="sidebar-menu">
         <a href="#" class="menu-item"><span>⌂</span> Início</a>
         <a href="chamados.html" class="menu-item active"><span>＋</span> Novo chamado</a>
-        <a href="#" class="menu-item"><span>◷</span> Meus chamados</a>
+        <a href="meus_chamados.html" class="menu-item"><span>◷</span> Meus chamados<a>
         <a href="#" class="menu-item"><span>⌖</span> Mapa</a>
-        <a href="Perfil.html" class="menu-item"><span>♙</span> Meu perfil</a>
+        <a href="perfil.html" class="menu-item"><span>♙</span> Meu perfil</a>
       </nav>
 
     </aside>
@@ -106,7 +106,9 @@
 
               <div class="form-actions">
                 <button class="cancel" type="button">Cancelar</button>
+                <a href="denuncia_enviada.html">
                 <button class="submit" type="submit">Enviar chamado →</button>
+                </a>
               </div>
             </form>
           </section>
@@ -148,18 +150,23 @@
 
   <script>
     
-
-    document.getElementById("foto").addEventListener("change", function () {
-      document.getElementById("fileName").textContent =
+document.getElementById("foto").addEventListener("change", function () {
+    document.getElementById("fileName").textContent =
         this.files.length ? this.files[0].name : "Adicionar foto";
-    });
+});
 
-    document.getElementById("ticketForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const toast = document.getElementById("toast");
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 3000);
-    });
+document.getElementById("ticketForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const toast = document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(function () {
+        window.location.href = "denuncia_enviada.html";
+    }, 2500);
+});
+
   </script>
 </body>
 </html>

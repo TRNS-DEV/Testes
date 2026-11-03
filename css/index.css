@@ -1,238 +1,387 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
 
-body{
+body {
     background-color: rgb(224, 223, 219);
 }
 
-.interface{
+.interface {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 4%; /* Adicionado padding flexível para evitar colar na borda */
 }
 
 /* Estilo do header */
-
-header.rolagem{
-    background-color: white;
-    padding: 10px 0px;
-}
-
-header.rolagem .menu-desktop ul li a, header.rolagem section.btn-contato{
-    color: rgb(29, 107, 57)
-}
-
-header{ width: 100%;
+header {
+    width: 100%;
     padding: 20px 0;
     background-color: rgb(29, 107, 57);
+    position: relative;
+    z-index: 99;
 }
 
-header .interface{
+header.rolagem {
+    background-color: white;
+    padding: 10px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header.rolagem .menu-desktop ul li a, 
+header.rolagem section.btn-contato button {
+    color: rgb(29, 107, 57);
+    border-color: rgb(29, 107, 57);
+}
+
+header .interface {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .interface img{
-    max-width:60px;
+header .interface img {
+    max-width: 60px;
+    display: block;
 }
 
-header .menu-desktop ul{
+/* Botão Mobile (escondido por padrão) */
+.btn-abrir-menu {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+header.rolagem .btn-abrir-menu {
+    color: rgb(29, 107, 57);
+}
+
+header .menu-desktop ul {
     list-style-type: none;
 }
 
-header .menu-desktop ul li{
+header .menu-desktop ul li {
     display: inline-block;
-    margin: 0px 35px;
+    margin: 0px 20px;
 }
 
-header .menu-desktop ul li a{
+header .menu-desktop ul li a {
     color: white;
     text-decoration: none;
     display: inline-block;
     transition: 0.3s;
+    font-size: 16px;
 }
 
-header .menu-desktop ul li a:hover{
+header .menu-desktop ul li a:hover {
     transform: scale(1.1);
 }
 
-header .btn-contato button{
-    width: 160px;
-    height: 50px;
+header .btn-contato button {
+    width: 150px;
+    height: 45px;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid white;
     color: white;
     cursor: pointer;
     transition: 0.5s;
+    border-radius: 4px;
 }
 
-header .btn-contato button:hover{
+header .btn-contato button:hover {
     background-color: white;
     color: rgb(29, 107, 57);
 }
 
-/*Estilo do hero-site */
-
-section.hero-site{
-    height: 90vh;
-    background-image: url(../imagens/gari_sede_garagem.png);
+/* Estilo do hero-site */
+section.hero-site {
+    min-height: 85vh;
+    background: linear-gradient(rgba(29, 107, 57, 0.75), rgba(29, 107, 57, 0.75)), url('../imagens/gari_sede_garagem.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: white;
-    background-color: rgb(29, 107, 57);
-
-}
-
-.hero-site .interface{
     display: flex;
     align-items: center;
-    height: 100%;
-
+    padding: 60px 0;
 }
 
-.hero-site .txt-hero h1{
-    font-size: 4em;
-    line-height: 70px;
+.hero-site .interface {
+    width: 100%;
+}
+
+.hero-site .txt-hero {
+    max-width: 650px;
+}
+
+.hero-site .txt-hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
     font-weight: 200;
+    margin-bottom: 20px;
 }
 
-.hero-site .txt-hero h1 span{
+.hero-site .txt-hero h1 span {
     display: block;
     font-weight: 800;
-
 }
 
-.hero-site .txt-hero p{
-    font-size: 20px;
+.hero-site .txt-hero p {
+    font-size: 1.1rem;
     font-weight: 300;
+    line-height: 1.6;
 }
 
-.hero-site .txt-hero p span{
+.hero-site .txt-hero p span {
     display: block;
     font-weight: 500;
-    margin: 5px 0px;
+    margin-top: 5px;
 }
 
-.hero-site .txt-hero button{
+.hero-site .txt-hero button {
     width: 200px;
-    height: 40px;
+    height: 48px;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 17px;
     border: 1px solid white;
     color: white;
     cursor: pointer;
     transition: 0.5s;
-    margin: 25px 0px;
+    margin-top: 25px;
+    border-radius: 4px;
 }
 
-.hero-site .txt-hero button:hover{
+.hero-site .txt-hero button:hover {
     background-color: white;
     color: rgb(29, 107, 57);
 }
 
 /* Estilo das vantagens */
-
 section.vantagens {
     padding: 80px 0;
     background-color: rgb(224, 223, 219);
 }
 
-.vantagens .itens-conteiner{
+.vantagens .itens-conteiner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10%;
-    margin-bottom: 60px;
-
+    gap: 40px;
+    margin-bottom: 70px;
 }
 
-.vantagens .itens-conteiner .img-itens img{
+.vantagens .itens-conteiner .img-itens {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.vantagens .itens-conteiner .img-itens img {
+    width: 100%;
     max-width: 420px;
+    height: auto;
+    border-radius: 8px;
 }
 
-.vantagens .itens-conteiner .txt-itens h3{
-    font-size: 3em;
-    line-height: 50px;
-    margin-bottom: 20px;
+.vantagens .itens-conteiner .txt-itens {
+    flex: 1;
 }
 
-.itens-conteiner .txt-itens h3 span{
+.vantagens .itens-conteiner .txt-itens h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.itens-conteiner .txt-itens h3 span {
     font-weight: 300;
 }
 
-body section.vantagens div.interface article{
-    background-color: rgb(224, 223, 219);
+.vantagens .itens-conteiner .txt-itens p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Estilo botoes contato */
-
-section.contato_redes_social{
+/* Estilo botões contato */
+section.contato_redes_social {
     background-color: white;
     padding: 80px 0;
 }
 
-.txt-ctt-rede_social, .icons-contato{
-    display: inline-block;
-    width: 50%;
-    margin-right: -4px;
-    vertical-align: middle;
-}
-.txt-ctt-rede_social h3 span{
-display: flex;
-
-}
-.txt-ctt-rede_social p{
-    margin-top: 15px;
-}
-
-.contato_redes_social .txt-ctt-rede_social h3{
-    font-size: 3em;
-    line-height: 25px;
-   
-    
-}
-
-.contato_redes_social .txt-ctt-rede_social h3 span{
-    font-weight: 300;
-   
-}
-
-.contato_redes_social .icons-contato a{
-    text-decoration: none;
-}
-
-
-
-.contato_redes_social .icons-contato button{
+section.contato_redes_social .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
-    width: 60%;
-    height: 60px;
-    margin: 0 auto 20px auto;
+    gap: 30px;
+}
+
+.txt-ctt-rede_social {
+    flex: 1;
+}
+
+.txt-ctt-rede_social h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #1d6b39;
+}
+
+.txt-ctt-rede_social h3 span {
+    font-weight: 300;
+    color: #333;
+}
+
+.txt-ctt-rede_social p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.icons-contato {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato_redes_social .icons-contato a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.contato_redes_social .icons-contato button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 0 25px;
+    width: 100%;
+    max-width: 380px;
+    height: 55px;
+    margin: 0 auto;
     background-color: transparent;
     border: 2px solid rgb(29, 107, 57);
+    color: rgb(29, 107, 57);
     cursor: pointer;
-
-    transition: 0.5s;
+    transition: 0.3s;
+    border-radius: 6px;
+    font-weight: 600;
 }
 
-.contato_redes_social .icons-contato button i{
-    font-size: 20px;
-    
+.contato_redes_social .icons-contato button i {
+    font-size: 22px;
 }
 
-.contato_redes_social .icons-contato button:hover{
+.contato_redes_social .icons-contato button:hover {
     background-color: rgb(29, 107, 57);
+    color: #fff;
 }
 
- .contato_redes_social .icons-contato button:hover i, .contato_redes_social .icons-contato button:hover{
-        color: #fff;
+
+/* ===================================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   =================================================== */
+
+/* Tablet e Telas Menores (até 868px) */
+@media screen and (max-width: 868px) {
+    header .btn-contato {
+        display: none; /* Esconde botão do topo para economizar espaço */
     }
+
+    .btn-abrir-menu {
+        display: block; /* Revela o botão hambúrguer */
+    }
+
+    header .menu-desktop {
+        display: none; /* Esconde menu tradicional */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(29, 107, 57);
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    header .menu-desktop.ativo {
+        display: block; /* Exibe quando ativado via JS */
+    }
+
+    header .menu-desktop ul li {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    header .menu-desktop ul li a {
+        font-size: 18px;
+    }
+
+    /* Hero */
+    .hero-site .txt-hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero-site .txt-hero p {
+        font-size: 1rem;
+    }
+
+    /* Seção Vantagens */
+    .vantagens .itens-conteiner {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    /* Ajuste de ordem para telas menores ficarem padronizadas: texto depois imagem (ou vice-versa) */
+    .vantagens .itens-conteiner.invertido {
+        flex-direction: column-reverse;
+    }
+
+    .vantagens .itens-conteiner .txt-itens h3 {
+        font-size: 2rem;
+    }
+
+    /* Seção Contato */
+    section.contato_redes_social .interface {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .txt-ctt-rede_social h3 {
+        font-size: 2rem;
+    }
+
+    .icons-contato {
+        width: 100%;
+    }
+}
+
+/* Celulares (até 480px) */
+@media screen and (max-width: 480px) {
+    .hero-site .txt-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-site .txt-hero button {
+        width: 100%;
+    }
+
+    .vantagens .itens-conteiner .txt-itens h3 {
+        font-size: 1.7rem;
+    }
+
+    .contato_redes_social .icons-contato button {
+        max-width: 100%;
+        justify-content: center;
+    }
+}

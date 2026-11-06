@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Impede que paddings estourem o tamanho dos elementos */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -12,6 +12,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #0f172a;
+    padding: 15px; /* Margem de segurança para o container não colar nas bordas no celular */
 }
 
 /* Bloco branco */
@@ -22,6 +23,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 400px;
+    box-sizing: border-box;
 }
 
 /* Letras: Pretas */
@@ -30,6 +32,10 @@ h2 {
     margin-bottom: 24px;
     color: #000000;
     font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 16px; /* Adicionado respiro entre os grupos de inputs */
 }
 
 .input-group label {
@@ -42,6 +48,7 @@ h2 {
 
 .input-group input {
     width: 100%;
+    max-width: 100%; /* Força o input a respeitar o limite do container */
     padding: 12px;
     border: 1px solid #737373;
     border-radius: 6px;
@@ -49,6 +56,7 @@ h2 {
     color: #000000;
     outline: none;
     transition: border-color 0.2s;
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -63,9 +71,7 @@ h2 {
     margin-bottom: 24px;
     font-size: 14px;
     color: #000000;
-};
-
-
+} /* Corrigido o ponto e vírgula duplo aqui */
 
 .options a {
     color: #15803d;
@@ -79,6 +85,7 @@ h2 {
 /* Botão de acesso verde */
 .btn-login {
     width: 100%;
+    max-width: 100%;
     padding: 12px;
     background-color: #15803d;
     border: none;
@@ -87,9 +94,8 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
-    
-    /* Letras de acesso */
     color: #ffffff; 
+    box-sizing: border-box;
 }
 
 /* Efeito ao passar o mouse */
@@ -113,4 +119,32 @@ h2 {
 
 .signup-text a:hover {
     text-decoration: underline;
+}
+
+
+/* ===================================================
+   RESPONSIVIDADE PARA CELULARES (Telas até 400px)
+   =================================================== */
+@media screen and (max-width: 400px) {
+    body {
+        padding: 10px; /* Reduz margem externa no mobile */
+    }
+
+    .login-container {
+        padding: 20px; /* Reduz o espaçamento interno para otimizar espaço */
+    }
+
+    h2 {
+        font-size: 24px; /* Diminui levemente o título para não quebrar feio */
+        margin-bottom: 20px;
+    }
+
+    .input-group input {
+        font-size: 16px; /* Garante tamanho ideal no mobile sem zoom automático */
+        padding: 10px;
+    }
+
+    .btn-login {
+        padding: 10px;
+    }
 }

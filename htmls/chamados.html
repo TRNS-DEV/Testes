@@ -31,7 +31,7 @@
                     <span>⌂</span> Início
                 </a>
 
-                <a href="Chamados.html" class="menu-item active">
+                <a href="chamados.html" class="menu-item active">
                     <span>＋</span> Novo chamado
                 </a>
 
@@ -169,8 +169,7 @@
                                             id="local"
                                             name="local"
                                             placeholder="Rua, número ou ponto de referência"
-                                            required
-                                        >
+                                            required>
                                     </div>
                                 </div>
 
@@ -224,79 +223,49 @@
                                         id="foto"
                                         name="foto"
                                         type="file"
-                                        accept="image/jpeg,image/png,image/webp"
-                                    >
+                                        accept="image/jpeg,image/png,image/webp">
 
                                     <small class="file-error" id="fileError"></small>
-
                                 </div>
-
                             </div>
-
 
                             <!-- AÇÕES -->
                             <div class="form-actions">
 
-                                <button
-                                    class="cancel"
-                                    id="cancelButton"
-                                    type="button"
-                                >
-                                    Cancelar
-                                </button>
-
-                                <button
-                                    class="submit"
-                                    type="submit"
-                                >
-                                    Enviar chamado →
-                                </button>
-
+                                <button class="cancel" id="cancelButton" type="button"> Cancelar </button>
+                                <button class="submit" type="submit"> Enviar chamado → </button>
                             </div>
-
                         </form>
-
                     </section>
-
 
                     <!-- COLUNA DIREITA -->
                     <aside class="side-column">
 
                         <!-- STATUS -->
                         <section class="card status-card">
-
                             <div class="status-head">
-
                                 <div>
                                     <p>Status da coleta</p>
                                     <strong>Regular</strong>
                                 </div>
-
                                 <div class="check" aria-label="Regular">
                                     ✓
                                 </div>
-
                             </div>
-
                             <p class="last-collection">
                                 Última coleta: Ontem, 18:17
                             </p>
-
                         </section>
-
 
                         <!-- COMO FUNCIONA -->
                         <section class="card help-card">
-
                             <h3>Como funciona?</h3>
-
                             <div class="step">
                                 <b>1</b>
                                 <span>
                                     Informe o tipo e o local do problema.
                                 </span>
                             </div>
-
                             <div class="step">
                                 <b>2</b>
                                 <span>
@@ -304,60 +273,42 @@
                                     uma foto.
                                 </span>
                             </div>
-
                             <div class="step">
                                 <b>3</b>
                                 <span>
                                     Envie o chamado e acompanhe o andamento.
                                 </span>
                             </div>
-
                         </section>
-
 
                         <!-- RESUMO -->
                         <section class="card reports-card">
-
                             <h3>Seus chamados</h3>
-
                             <div class="report-numbers">
-
                                 <div>
                                     <strong>3</strong>
                                     <span>Em análise</span>
                                 </div>
-
                                 <div>
                                     <strong>4</strong>
                                     <span>Andamento</span>
                                 </div>
-
                                 <div>
                                     <strong>7</strong>
                                     <span>Resolvidos</span>
                                 </div>
-
                             </div>
-
                         </section>
-
                     </aside>
-
                 </div>
-
             </section>
-
         </main>
-
     </div>
-
 
     <!-- MENSAGEM -->
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-
     <!-- JAVASCRIPT -->
     <script src="js/chamado.js"></script>
-
 </body>
 </html>

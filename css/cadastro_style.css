@@ -1,108 +1,158 @@
-:root{
- --verde-escuro: #0f3d1f;
+:root {
+    --verde-escuro: #0f3d1f;
     --verde-claro: #4caf50;
     --cinza-texto: #333333;
     --cinza-fundo: #0f172a;
 }
-*{
+
+/* Reset Global: Aplica box-sizing para TODOS os elementos */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* O padding e a borda não aumentam o tamanho do elemento */
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cinza-fundo);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cinza-texto);
+    padding: 15px; /* Evita que o container encoste nas bordas da tela */
+}
+
+/* Logo centralizada sem vazar */
+.recolhe-mais img {
+    max-width: 100%;
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+/* Container Principal (Cartão Branco) */
+.container-principal {
+    width: 100%;
+    max-width: 400px; /* Largura máxima fixa para PC */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     box-sizing: border-box;
 }
-body{
-    min-height: 100vh;
-  background-color: var(--cinza-fundo);
-    font-family: arial, sans-serif;
-    display:flex;
-     justify-content: center;
-     align-items: center;
-     color: var(--cinza-texto);
-}
-.recolhe-mais img {
-    max-width: 60%;
-    height:auto;
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-   
-   
-}
-.container-principal{
-    width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-
-    
-}
-.formulario-cadastro label{
+/* Estilo do Formulário */
+.formulario-cadastro label {
     display: block;
     margin-bottom: 4px;
     font-weight: bold;
+    font-size: 14px;
 }
-.formulario-cadastro input{
+
+/* Inputs travados para NUNCA saltar do container */
+.formulario-cadastro input {
     display: block;
     width: 100%;
-    margin-bottom: 16px;
-    padding: 8px;
+    max-width: 100%; /* Força o input a respeitar o container */
+    margin-bottom: 14px;
+    padding: 10px;
     border: 1px solid #CCCCCC;
     border-radius: 6px;
     font-size: 14px;
+    box-sizing: border-box;
 }
-.formulario-cadastro input:focus{
+
+.formulario-cadastro input:focus {
     outline: none;
     border-color: var(--verde-claro);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
+
+/* Botão de Envio (Cadastrar) */
 .formulario-cadastro button[type="submit"] {
     width: 100%;
-    padding: 10px;
+    max-width: 100%;
+    padding: 12px;
     background-color: var(--verde-escuro);
     color: #f4f4f4;
     border: none;
-    border-radius:6px;
+    border-radius: 6px;
     font-size: 15px;
-    font-weight: bold ;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
 }
-.formulario-cadastro button[type="submit"]:hover{
-    background-color: var(--verde-claro) ;
+
+.formulario-cadastro button[type="submit"]:hover {
+    background-color: var(--verde-claro);
 }
-.formulario-cadastro fieldset{
+
+.formulario-cadastro fieldset {
     margin: 0;
     padding: 0;
+    border: none;
 }
-.formulario-cadastro legend{
+
+.formulario-cadastro legend {
     display: none;
 }
-.botoes{
-    display:flex;
-   justify-content: center;
-   margin-bottom: 24px;
-   gap:15px;
+
+/* Botões de Alternância (Morador / Empresa) */
+.botoes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
 }
-.botoes button{
+
+.botoes button {
     flex: 1;
     padding: 10px;
     border: 1px solid var(--verde-escuro);
     background-color: white;
     font-size: 14px;
     font-weight: bold;
-    cursor:pointer;
+    cursor: pointer;
+    color: var(--verde-escuro);
+    transition: all 0.3s;
+    box-sizing: border-box;
 }
-.btn-morador{
-border-radius:  6px 0 0 6px;
+
+.btn-morador {
+    border-radius: 6px 0 0 6px;
 }
-.btn-empresa{
-border-radius: 6px 0 0 6px;
+
+.btn-empresa {
+    border-radius: 0 6px 6px 0;
 }
-.botoes button.ativo{
+
+.botoes button.ativo {
     background-color: var(--verde-escuro);
     color: white;
 }
-    
 
+/* ===================================================
+   RESPONSIVIDADE E PROTEÇÃO MÓVEL (TELAS ATÉ 400px)
+   =================================================== */
+@media screen and (max-width: 400px) {
+    body {
+        padding: 10px; /* Reduz margens externas no celular */
+    }
 
+    .container-principal {
+        padding: 18px; /* Ajusta preenchimento interno para dar mais espaço */
+    }
 
+    .formulario-cadastro input {
+        font-size: 16px; /* Evita que o iOS/Android dê zoom automático nos inputs */
+        padding: 9px;
+    }
+
+    .botoes button {
+        font-size: 13px;
+        padding: 9px 4px;
+    }
+}

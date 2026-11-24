@@ -1,80 +1,121 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para o padding não estourar o container */
+    font-family: Arial, sans-serif; 
 }
 
 body {
-font-family: arial, sans-serif;
-background-color: #f1f7f0;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
+    background-color: #f1f7f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; /* Margem de segurança para o container não colar nas bordas no mobile */
 }
 
 .container {
-background-color: #ffffff;
-width: 100%;
-max-width: 480px;
-padding: 40px 25px;
-border-radius: 18px;
-text-align: center;
-box-shadow: 0 5px 20px #00000012;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    box-sizing: border-box; /* Trava o padding para dentro */
 }
 
 .icone-sucesso {
-width: 85px;
-height: 85px;
-margin: 0 auto 20px;
-border-radius: 50%;
-background-color: #e0f3e3;
-color: #218739;
-font-size: 55px;
-display: flex;
-align-items: center;
-justify-content: center;
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: #e0f3e3;
+    color: #218739;
+    font-size: 45px; /* Ajustado proporcionalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-color: #218739;
-font-size: 27px;
-margin-bottom: 15px;
+    color: #218739;
+    font-size: 27px;
+    margin-bottom: 15px;
 }
 
 .mensagem {
-color: #555;
-line-height: 1.6;
-margin-bottom: 25px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 15px;
 }
 
 .status {
-background-color: #f1f7f0;
-padding: 18px;
-border-radius: 10px;
-color: #444;
-line-height: 1.7;
-margin-bottom: 25px;
+    background-color: #f1f7f0;
+    padding: 18px;
+    border-radius: 10px;
+    color: #444444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 14px;
 }
 
 .botao {
-display: block;
-background-color: #218739;
-color: white;
-text-decoration: none;
-padding: 14px;
-border-radius: 8px;
-font-weight: bold;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    background-color: #218739;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
 }
 
 .botao:hover {
-background-color: #176b2b;
+    background-color: #176b2b;
 }
 
 .link-inicio {
-display: inline-block;
-margin-top: 20px;
-color: #218739;
-text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    color: #218739;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-inicio:hover {
+    text-decoration: underline;
+}
+
+/* ===================================================
+   RESPONSIVIDADE PARA CELULARES (Telas até 400px)
+   =================================================== */
+@media screen and (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 25px 15px; /* Reduz espaçamento interno em telas muito estreitas */
+    }
+
+    h1 {
+        font-size: 22px; /* Diminui o título para não quebrar feio */
+    }
+
+    .icone-sucesso {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+
+    .mensagem, .status {
+        font-size: 14px;
+    }
 }

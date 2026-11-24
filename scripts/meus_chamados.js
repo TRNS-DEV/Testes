@@ -19,7 +19,7 @@ const chamados = [
     data: "2026-10-20",
     status: "emAnalise",
     descricao: "Entulho em via pública.",
-    foto: "https://picsum.photos/id/10/400/300"
+    foto: "https://imgs.search.brave.com/ApReftl7dTblcTECfqfJYRlwXRGXrLivxISvuhJrZm4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZW5zLm5lMTAudW9s/LmNvbS5ici92ZWlj/dWxvcy9fbWlkaWFz/L2pwZy8yMDI2LzAy/LzIwL2ltZ18wNzQy/LTM2NDc1NzEwLmpw/Zz82OTk4OTVhZGYy/NDNkP2ltcz04MDB4/NTMz"
   },
   {
     id: 2,

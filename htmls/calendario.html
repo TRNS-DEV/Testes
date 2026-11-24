@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1D6B39">
+  <title>Calendário de Coletas | UECÍ</title>
+  <link rel="stylesheet" href="../css/calendario.css">
+  <script src="../scripts/calendario.js" defer></script>
+  <link rel="icon" href="../imagens/favicon-svg.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="UECÍ - Início">
+      <span class="brand-mark">♻</span><span>UECÍ</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="chamados.html">Início</a>
+      <a href="#">Comunidade</a>
+      <a href="#">Alertas</a>
+      <a class="active" href="#">Calendário</a>
+      <a href="#">Anúncios</a>
+    </nav>
+    <button class="nav-action" id="addEventTop">+ Adicionar coleta</button>
+  </header>
+
+  <main class="page">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">UECÍ · CONECTANDO PESSOAS, COLETA E CIDADE</p>
+        <h1>Calendário de coletas</h1>
+        <p class="subtitle">Acompanhe os dias, horários e locais de coleta da sua região.</p>
+      </div>
+      <div class="legend">
+        <span><i class="dot green"></i> Coleta programada</span>
+        <span><i class="dot orange"></i> Aviso / alteração</span>
+      </div>
+    </section>
+
+    <section class="calendar-layout">
+      <div class="calendar-panel">
+        <div class="calendar-toolbar">
+          <div class="month-controls">
+            <button class="icon-btn" id="prevMonth" aria-label="Mês anterior">‹</button>
+            <button class="icon-btn" id="nextMonth" aria-label="Próximo mês">›</button>
+            <h2 id="monthTitle">Novembro 2026</h2>
+          </div>
+          <button class="today-btn" id="todayBtn">Hoje</button>
+        </div>
+
+        <div class="weekdays" aria-hidden="true">
+          <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span>
+          <span>Qui</span><span>Sex</span><span>Sáb</span>
+        </div>
+        <div class="calendar-grid" id="calendarGrid" aria-label="Calendário mensal"></div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="side-heading">
+          <div>
+            <p class="eyebrow">AGENDA DO DIA</p>
+            <h2 id="selectedDateTitle">17 de novembro</h2>
+          </div>
+          <span class="date-chip" id="selectedWeekday">Terça-feira</span>
+        </div>
+        <div id="dayEvents" class="day-events"></div>
+        <button class="primary-btn full" id="addEventSide">+ Cadastrar coleta</button>
+        <div class="info-note">
+          <span class="note-icon">i</span>
+          <p>Os eventos exibidos são fictícios e servem como exemplo para a equipe cadastrar a programação real.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="upcoming-section">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">PROGRAMAÇÃO</p>
+          <h2>Próximas coletas</h2>
+        </div>
+        <span class="small-muted">Eventos cadastrados</span>
+      </div>
+      <div class="upcoming-list" id="upcomingList"></div>
+    </section>
+  </main>
+
+  <dialog id="eventDialog" class="event-dialog">
+    <form id="eventForm">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">GERENCIAR AGENDA</p>
+          <h2 id="dialogTitle">Adicionar coleta</h2>
+        </div>
+        <button type="button" class="close-btn" id="closeDialog" aria-label="Fechar">×</button>
+      </div>
+      <input type="hidden" id="eventId">
+      <label>Nome da coleta
+        <input id="eventName" type="text" placeholder="Ex.: Coleta seletiva" required maxlength="70">
+      </label>
+      <div class="form-row">
+        <label>Data
+          <input id="eventDate" type="date" required>
+        </label>
+        <label>Horário
+          <input id="eventTime" type="time" value="08:00">
+        </label>
+      </div>
+      <label>Local / bairro
+        <input id="eventLocation" type="text" placeholder="Ex.: Boa Viagem" required maxlength="90">
+      </label>
+      <label>Tipo de coleta
+        <select id="eventType">
+          <option value="Recicláveis">Recicláveis</option>
+          <option value="Lixo comum">Lixo comum</option>
+          <option value="Eletrônicos">Eletrônicos</option>
+          <option value="Entulho">Entulho</option>
+          <option value="Aviso">Aviso / alteração</option>
+        </select>
+      </label>
+      <label>Descrição (opcional)
+        <textarea id="eventDescription" rows="3" placeholder="Informações adicionais para os moradores..."></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="secondary-btn" id="cancelDialog">Cancelar</button>
+        <button type="submit" class="primary-btn">Salvar evento</button>
+      </div>
+      <p class="form-hint">As alterações ficam salvas neste navegador (armazenamento local).</p>
+    </form>
+  </dialog>
+</body>
+</html>
